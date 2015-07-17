@@ -21,6 +21,9 @@ a = function() {
   $(".dropdown-button").dropdown();
   $(".button-collapse").sideNav();
   Waves.displayEffect();
+  $('.collapsible').collapsible({
+    accordion : false
+  });
 }
 
 $(document).on("ready page:load", a);
