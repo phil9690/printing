@@ -37,6 +37,9 @@ $navbar-font-color: #444;
     &:hover {
       @extend .z-depth-4;
     }
+  p {
+    text-align: center;
+  }
 
   }
   h5 {
@@ -89,6 +92,34 @@ $navbar-font-color: #444;
     font-style: italic;
     &:before, &:after {
       content: '"';
+    }
+  }
+}
+
+.service-banner {
+  margin: 0 auto;
+}
+
+.service-text {
+  h2 {
+    font-size: 2.6em;
+    text-align: center;
+    @extend .grey-text, .text-darken-1;
+  }
+  img {
+    float: left;
+    max-width: 400px;
+    padding: 0.3em 1em 1em 0em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .service-text {
+    img {
+      max-width: 320px;
+      width: 100%;
+      padding: 0;
+      padding-bottom: 1em;
     }
   }
 }
