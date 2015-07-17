@@ -1,25 +1,55 @@
-<footer class="page-footer grey darken-4">
+<script>
+function initialize() {
+  var myLatlng = new google.maps.LatLng(54.964213,-1.554565);
+  var mapOptions = {
+zoom: 11,
+      center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+position: myLatlng,
+map: map,
+title: 'FranklinPrint'
+});
+}
+
+google.maps.event.addDomListener(window, 'page:load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+<footer class="page-footer grey darken-4 white-text">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
+      <div class="col l4 m4 s12">
+        <h5 class="white-text">About us</h5>
         <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate non nibh et imperdiet. Pellentesque gravida massa fringilla dolor facilisis mollis. Proin sed tortor sit amet dui euismod blandit vitae ac risus. Vivamus in velit justo. Cras sit amet ipsum tempor, blandit velit a, luctus ips.</p>
+        <div class="divider"></div>
+        <h6>FranklinPrint: Contact</h6> 
+        <span><i class="material-icons left">phone</i><p>0123456789</p></span>
+        <span><i class="material-icons left">email</i><p>contact@franklinprint.co.uk</p></span>
+        <p>
       </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+      <div class="col l4 m4 s12">
+        <h5>Services</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Services</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">About us</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Contact us</a></li>
+          <li><%= link_to "Tshirt printing", tshirt_printing_path %></li>
+          <li><%= link_to "Workwear", workwear_path %></li>
+          <li><%= link_to "Sublimation printing", sublimation_printing_path %></li>
+          <li><%= link_to "Display printing", display_printing_path %></li>
+          <li><%= link_to "Charity vests", charity_vests_path %></li>
         </ul>
       </div>
+      <div class="col l4 m4 s12">
+        <h5 class="white-text">Map</h5>
+        <div id="map-canvas" class="z-depth-4"></div>
+      </div>
+
     </div>
   </div>
   <div class="footer-copyright black">
     <div class="container">
-      © 2015 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-    </div>
+    <p class="center-align">© 2015 Copyright Text</p>
+  </div>
   </div>
 </footer>
